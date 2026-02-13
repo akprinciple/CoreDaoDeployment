@@ -9,11 +9,12 @@ contract Core {
    }
 
    Student[] public students;
+    event AddStudent(string name, uint8 age, bool present);
     function setStudent() public {
          Student memory student = Student("John", 1, true);
          students.push(student);
+            emit AddStudent(student.name, student.age, student.present);
     }
 
-    Event AddStudent(string name, uint8 age, bool present);
     
 }
